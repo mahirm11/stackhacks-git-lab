@@ -18,7 +18,7 @@ Add your name (and a fun fact!) to `contributors.txt` by following the steps bel
 ### 1. Clone the repo
 ```bash
 git clone <repo-url>
-cd contributor-wall
+cd stackhacks-git-lab
 ```
 
 ### 2. Create your branch
