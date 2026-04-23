@@ -1,55 +1,101 @@
-# Stackhacks Git Lab
+# StackHacks Git Lab : The Living Story 📖
+
 
 > A beginner-friendly Git workshop exercise by StackHacks
 
-Welcome! This repo is used during our **Git Workshop** to practice real Git skills.  
-By the end of this exercise, you'll have cloned a repo, made a branch, resolved a merge conflict, and opened a Pull Request — just like developers do every day.
+Welcome! This repo is used during our **Git Workshop** to practice real Git skills in groups.  
+By the end of this exercise, you'll have:
+* cloned a repo,
+* made a branch, 
+* used `git stash`, 
+* survived a merge conflict, and 
+* opened a Pull Request (PR) 
+
+— just like developers do every day.
 
 ---
 
-## 🚀 The Exercise
+## 🚀 The Exercise — "The Living Story"
 
-Add your name (and a fun fact!) to `contributors.txt` by following the steps below.
+Work in **groups on one laptop**. Groups are considered either pairs or trios (individual would be a last resort). Together you'll add a line to a shared story file — but the host will secretly edit the opening line while you work, guaranteeing a merge conflict for everyone. You'll also practice `git stash` in a realistic scenario.
+
+> 💡 Take turns! One person drives (types the commands), the other(s) navigate (read the instructions). Swap roles at each phase.
 
 ---
 
 ## 📋 Step-by-Step Instructions
 
-### 1. Clone the repo
+### Phase 1 — Clone & Branch (5 min)
 ```bash
 git clone <repo-url>
-cd stackhacks-git-lab
+cd living-story
+git checkout -b group-[your-number]-branch
 ```
 
-### 2. Create your branch
-```bash
-git checkout -b add-your-name
-```
+### Phase 2 — Write Your Line (8 min)
+Open `story.txt` and add **one new line** to continue the story. Be creative!
 
-### 3. Edit `contributors.txt`
-Open the file and add a new line in this format:
-```
-Your Name - Fun fact about yourself
-```
-
-### 4. Stage and commit your change
+Then stage and commit:
 ```bash
 git add .
-git commit -m "feat: add [your name] to contributors"
+git commit -m "feat: add group [number] story line"
+git push origin group-[your-number]-branch
 ```
 
-### 5. Push your branch
+### Phase 3 — The Stash Challenge (10 min)
+Before you open your PR, the host will announce an urgent update to `main`. You need to pull it — but you haven't committed your latest edit yet!
+
+Save your work with stash, pull the update, then restore it:
 ```bash
-git push origin add-your-name
+git stash
+git pull origin main
+git stash pop
+git add .
+git commit -m "feat: finalize group [number] contribution"
+git push origin group-[your-number]-branch
 ```
 
-### 6. Open a Pull Request
-Go to the repo on GitHub and open a Pull Request from your branch into `main`.  
-A workshop host will review and merge it! 🎉
+### Phase 4 — Merge Conflict
+Open your PR on GitHub. The host will merge everyone's PRs into `main`.
+
+Now pull the latest changes:
+```bash
+git checkout main
+git pull
+git checkout group-[your-number]-branch
+git merge main
+```
+
+Because the host edited line 1 while you were working, **everyone will get a merge conflict.** Don't panic — work through it together:
+
+1. Open `story.txt` — Git marks the conflict like this:
+```
+<<<<<<< HEAD
+Once upon a time, there was a hackathon...
+=======
+Once upon a time, there was an EPIC hackathon...
+>>>>>>> main
+```
+2. Keep the version you want and **delete the markers**
+3. Then finish the resolution:
+```bash
+git add .
+git commit -m "fix: resolve merge conflict on opening line"
+git push origin group-[your-number]-branch
+```
+
+### Phase 5 — Final PR & Read the Story (10 min)
+Open your final PR on GitHub. The host will merge them all and everyone does a final pull:
+```bash
+git checkout main
+git pull
+cat story.txt
+```
+Read the completed story together — the more chaotic the better! 🎉
 
 ---
 
-## ⚔️ Merge Conflicts
+## ⚔️ Merge Conflict Cheat Sheet
 
 If you run into a merge conflict, don't panic! Here's what to do:
 
@@ -137,4 +183,4 @@ See [contributors.txt](./contributors.txt) for everyone who has completed the ex
 
 ---
 
-*Presented by [StackHacks]
+*Presented by [StackHacks](https://github.com) — thanks for coming!*
