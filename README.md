@@ -1,1 +1,1 @@
-# stackhacks-git-lab
+# Stackhacks Git Lab
