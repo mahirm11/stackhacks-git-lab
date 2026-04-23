@@ -42,7 +42,7 @@ git commit -m "feat: add group [number] story line"
 git push origin group-[your-number]-branch
 ```
 
-### Phase 3 — The Stash Challenge (10 min)
+### Phase 3 — The Stash Challenge
 Before you open your PR, the host will announce an urgent update to `main`. You need to pull it — but you haven't committed your latest edit yet!
 
 Save your work with stash, pull the update, then restore it:
