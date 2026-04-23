@@ -25,14 +25,14 @@ Work in **groups on one laptop**. Groups are considered either pairs or trios (i
 
 ## 📋 Step-by-Step Instructions
 
-### Phase 1 — Clone & Branch (5 min)
+### Phase 1 — Clone & Branch 
 ```bash
 git clone <repo-url>
 cd living-story
 git checkout -b group-[your-number]-branch
 ```
 
-### Phase 2 — Write Your Line (8 min)
+### Phase 2 — Write Your Line 
 Open `story.txt` and add **one new line** to continue the story. Be creative!
 
 Then stage and commit:
@@ -84,7 +84,7 @@ git commit -m "fix: resolve merge conflict on opening line"
 git push origin group-[your-number]-branch
 ```
 
-### Phase 5 — Final PR & Read the Story (10 min)
+### Phase 5 — Final PR & Read the Story 
 Open your final PR on GitHub. The host will merge them all and everyone does a final pull:
 ```bash
 git checkout main
