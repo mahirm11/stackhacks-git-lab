@@ -1,4 +1,4 @@
-# StackHacks Git Lab : The Living Story 📖
+# StackHacks Git Lab
 
 
 > A beginner-friendly Git workshop exercise by StackHacks
@@ -15,7 +15,7 @@ By the end of this exercise, you'll have:
 
 ---
 
-## 🚀 The Exercise — "The Living Story"
+## 🚀 The Exercise — "The Living Story" 📖
 
 Work in **groups on one laptop**. Groups are considered either pairs or trios (individual would be a last resort). Together you'll add a line to a shared story file — but the host will secretly edit the opening line while you work, guaranteeing a merge conflict for everyone. You'll also practice `git stash` in a realistic scenario.
 
