@@ -17,7 +17,7 @@ By the end of this exercise, you'll have:
 
 ## 🚀 The Exercise — "The Living Story" 📖
 
-Work in **groups on one laptop**. Groups are considered either pairs or trios (individual would be a last resort). Together you'll add a line to a shared story file — but the host will secretly edit the opening line while you work, guaranteeing a merge conflict for everyone. You'll also practice `git stash` in a realistic scenario.
+Work in **groups on one laptop**. Groups are considered either pairs or trios (individual would be a last resort). Together you'll add a line to a shared story file — the host will make two secret edits to line 1 along the way, guaranteeing a merge conflict for everyone in Phase 4. You'll also practice `git stash` in a realistic scenario.
 
 > 💡 Take turns! One person drives (types the commands), the other(s) navigate (read the instructions). Swap roles at each phase.
 
@@ -32,26 +32,29 @@ cd living-story
 git checkout -b group-[your-number]-branch
 ```
 
-### Phase 2 — Write Your Line 
-Open `story.txt` and add **one new line** to continue the story. Be creative!
+### Phase 2a — Write Your Line
+Open `story.txt` and add **one new line** to your assigned section. Be creative!
 
-Then stage and commit:
-```bash
-git add .
-git commit -m "feat: add group [number] story line"
-git push origin group-[your-number]-branch
-```
+⚠️ **Stop here — do NOT stage or commit yet. Wait for the host's signal.**
 
 ### Phase 3 — The Stash Challenge
-Before you open your PR, the host will announce an urgent update to `main`. You need to pull it — but you haven't committed your latest edit yet!
+The host will announce an urgent update to `main`. You need to pull it — but you have unsaved changes in your working directory!
 
-Save your work with stash, pull the update, then restore it:
+You can't pull with uncommitted changes. Figure out how to temporarily save your work, pull the update, then restore it.
+
+> 💡 Check the cheat sheet if you're stuck!
+
 ```bash
 git stash
 git pull origin main
 git stash pop
+```
+
+### Phase 2b — Commit & Push
+Now that you've pulled the latest changes, finish your work:
+```bash
 git add .
-git commit -m "feat: finalize group [number] contribution"
+git commit -m "feat: add group [number] story line"
 git push origin group-[your-number]-branch
 ```
 
@@ -66,14 +69,14 @@ git checkout group-[your-number]-branch
 git merge main
 ```
 
-Because the host edited line 1 while you were working, **everyone will get a merge conflict.** Don't panic — work through it together:
+The host has made a second edit to line 1 since you last pulled — so **everyone will get a merge conflict** when they merge `main` into their branch. Don't panic — work through it together:
 
 1. Open `story.txt` — Git marks the conflict like this:
 ```
 <<<<<<< HEAD
-Once upon a time, there was a hackathon...
-=======
 Once upon a time, there was an EPIC hackathon...
+=======
+Once upon a time, there was an EPIC hackathon that changed everything...
 >>>>>>> main
 ```
 2. Keep the version you want and **delete the markers**
