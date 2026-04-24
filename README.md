@@ -13,6 +13,7 @@ By the end of this exercise, you'll have:
 
 — just like developers do every day.
 
+NOTE: Only the host is allowed to edit this file! 
 ---
 
 ## 🚀 The Exercise — "The Living Story" 📖
@@ -28,7 +29,7 @@ Work in **groups on one laptop**. Groups are considered either pairs or trios (i
 ### Phase 1 — Clone & Branch 
 ```bash
 git clone <repo-url>
-cd living-story
+cd stackhacks-git-lab
 git checkout -b group-[your-number]-branch
 ```
 
