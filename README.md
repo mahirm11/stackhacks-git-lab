@@ -16,7 +16,7 @@ By the end of this exercise, you'll have:
 NOTE: Only the host is allowed to edit this file! 
 ---
 
-## 🚀 The Exercise — "The Living Story" 📖
+## 🚀 The Exercise — "The Random Story" 📖
 
 Work in **groups on one laptop**. Groups are considered either pairs or trios (individual would be a last resort). Together you'll add a line to a shared story file — the host will make two secret edits to line 1 along the way, guaranteeing a merge conflict for everyone in Phase 4. You'll also practice `git stash` in a realistic scenario.
 
